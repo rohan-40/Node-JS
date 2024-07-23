@@ -2,6 +2,9 @@ let express = require('express');
 let app = express();
 const db = require('./db.js');
 
+require('dotenv').config();
+const PORT = process.env.PORT || 3000;
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
@@ -17,6 +20,6 @@ const PersonRouter = require('./routes/PersonRoutes');
 app.use('/Person',PersonRouter);
 
 
-app.listen(3000,() =>{
+app.listen(PORT,() =>{
     console.log("Welcome to Indian Food Services")
 })
