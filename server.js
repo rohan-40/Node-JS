@@ -3,6 +3,7 @@ let app = express();
 const db = require('./db.js');
 const passport = require('./auth');
 
+
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
@@ -22,7 +23,7 @@ app.use(logRequest);
 app.use(passport.initialize());
 
 const localAuthMiddleware = passport.authenticate('local',{session:false});
-app.use(localAuthMiddleware);
+// app.use(localAuthMiddleware);
 
 app.get('/',function(req,res){
     res.send("Welcome Sir What can I Do For you")
