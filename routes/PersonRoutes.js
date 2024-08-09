@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Person = require('./../models/Person');
 const {jwtAuthMiddleWare, generateToken} = require('./../jwt');
-const { error } = require('console');
+// const { error } = require('console');
 
 router.post('/signup', async (req,res) => {
     try{
